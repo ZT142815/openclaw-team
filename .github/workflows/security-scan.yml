@@ -1,0 +1,48 @@
+name: Security Scan
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Run Security Scan
+      run: |
+        # Check for sensitive data
+        echo "=== Checking for sensitive data ==="
+        grep -r "password\|secret\|api_key\|token" --include="*.dart" --include="*.yaml" --include="*.json" . || echo "No sensitive data found in code"
+        
+        # Check for TODO/FIXME
+        echo "=== Checking for TODO/FIXME ==="
+        grep -r "TODO\|FIXME\|XXX" --include="*.dart" . || echo "No TODO/FIXME found"
+    
+    - name: Check dependencies
+      run: |
+        echo "=== Checking dependencies ==="
+        flutter pub outdated || true
+
+  dart-analyze:
+    name: Dart Analyze
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.24.0'
+        channel: 'stable'
+    
+    - name: Install dependencies
+      run: flutter pub get
+    
+    - name: Run Dart Analyze
+      run: flutter analyze --fatal-infos --fatal-warnings

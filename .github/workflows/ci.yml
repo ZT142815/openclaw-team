@@ -1,0 +1,132 @@
+name: Flutter CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  # ===========================================
+  # Job 1: Flutter Analyze
+  # ===========================================
+  analyze:
+    name: Flutter Analyze
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.0'
+          channel: 'stable'
+
+      - run: flutter pub get
+
+      - name: Run flutter analyze
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+
+  # ===========================================
+  # Job 2: Architecture Check
+  # ===========================================
+  architecture-check:
+    name: Architecture Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run architecture check
+        run: |
+          node .openclaw/workspace-developer/scripts/architecture-check.js --path lib
+
+  # ===========================================
+  # Job 3: Unit Tests
+  # ===========================================
+  test:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.0'
+          channel: 'stable'
+
+      - run: flutter pub get
+
+      - name: Run tests
+        run: flutter test --no-pub
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
+        if: always()
+
+  # ===========================================
+  # Job 4: Security Scan
+  # ===========================================
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run security scan
+        run: |
+          node .openclaw/workspace-developer/scripts/security-scan.js --project . --format json
+
+      # 依赖安全检查（使用 dart pub outdated）
+      - name: Check outdated dependencies
+        run: dart pub outdated --dependency-overrides || true
+
+  # ===========================================
+  # Job 5: Drift Detection
+  # ===========================================
+  drift-check:
+    name: Drift Detection
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run drift detection
+        run: |
+          node .openclaw/workspace-developer/scripts/drift-check.js --project lib --format text || true
+
+  # ===========================================
+  # Job 6: Build Check
+  # ===========================================
+  build:
+    name: Build Check
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.0'
+          channel: 'stable'
+
+      - run: flutter pub get
+
+      - name: Build iOS (simulator)
+        run: flutter build ios --simulator --no-codesign
+        if: matrix.os == 'macos-latest'
+
+      - name: Build Android (APK)
+        run: flutter build apk --debug
+        if: matrix.os == 'ubuntu-latest'

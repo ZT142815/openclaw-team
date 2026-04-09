@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "project": "",
+  "createdAt": "",
+  "lastModified": "",
+  "description": "功能清单 - 跟踪每个功能的实现状态",
+  "summary": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "inProgress": 0,
+    "notStarted": 0
+  },
+  "metadata": {
+    "prd": "",
+    "spec": "",
+    "testCoverage": "0%"
+  },
+  "features": []
+}

@@ -1,0 +1,152 @@
+# analysis_options.yaml
+# Flutter/Dart 项目 Lint 配置
+#
+# 用途：
+#   1. 定义项目使用的 lint 规则
+#   2. 为 AI Agent 提供可执行的纠正指令
+#   3. 与 architecture-check.js 互补（架构检查 + 代码质量检查）
+#
+# 使用方式：
+#   复制此文件到项目的 analysis_options.yaml
+#   运行 flutter analyze 查看所有问题
+#
+# AI Agent 纠正常见问题：
+#   • UI 直接调用 Repo
+#   • 缺少错误处理
+#   • 调试代码残留
+#   • 命名不规范
+#   • 缺少测试
+
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.gen.dart"
+    - build/**
+    - "lib/generated/**"
+
+  errors:
+    # 严重错误（必须修复）
+    invalid_annotation_target: error
+    missing_required_param: error
+    missing_return: error
+
+    # 警告（应该修复）
+    avoid_print: warning
+    avoid_unnecessary_containers: warning
+    avoid_void_async: warning
+    prefer_const_constructors: warning
+    prefer_const_declarations: warning
+    prefer_final_fields: warning
+    prefer_final_locals: warning
+    unnecessary_null_checks: warning
+
+    # 提示（建议修复）
+    prefer_collection_literals: hint
+    prefer_if_elements_to_conditional_expressions: hint
+    prefer_single_widget_per_file: hint
+    unnecessary_this: hint
+
+  # 启用强模式检查
+  language:
+    strict-casts: true
+    strict-raw-types: true
+
+linter:
+  rules:
+    # ========== 最佳实践 ==========
+    - always_declare_return_types
+    - always_put_required_named_parameters_first
+    - annotate_overrides
+    - avoid_annotating_with_dynamic
+    - avoid_empty_else
+    - avoid_init_to_null
+    - avoid_null_checks_in_equality_operators
+    - avoid_relative_lib_imports
+    - avoid_return_types_on_setters
+    - avoid_shadowing_type_parameters
+    - avoid_types_as_parameter_names
+    - camel_case_extensions
+    - curly_braces_in_flow_control_structures
+    - empty_catches
+    - empty_constructor_bodies
+    - library_names
+    - library_prefixes
+    - no_duplicate_case_values
+    - null_closures
+    - prefer_adjacent_string_concatenation
+    - prefer_collection_literals
+    - prefer_conditional_assignment
+    - prefer_contains
+    - prefer_equal_for_default_values
+    - prefer_final_fields
+    - prefer_for_elements_to_map_fromIterable
+    - prefer_generic_function_type_aliases
+    - prefer_if_null_operators
+    - prefer_interpolation_to_compose_strings
+    - prefer_is_empty
+    - prefer_is_not_empty
+    - prefer_iterable_whereType
+    - prefer_single_quotes
+    - prefer_spread_collections
+    - recursive_getters
+    - slash_for_doc_comments
+    - type_init_formals
+    - unawaited_futures
+    - unnecessary_const
+    - unnecessary_new
+    - unnecessary_null_in_if_null_operators
+    - unnecessary_this
+    - unrelated_type_equality_checks
+    - use_function_type_syntax_for_parameters
+    - use_rethrow_when_possible
+    - valid_regexps
+
+    # ========== Flutter 特定 ==========
+    - always_put_control_body_on_new_line
+    - avoid_print
+    - avoid_unnecessary_containers
+    - avoid_web_libraries_in_flutter
+    - prefer_const_constructors
+    - prefer_const_constructors_in_immutables
+    - prefer_const_literals_to_create_immutables
+    - prefer_final_locals
+    - unnecessary_null_comparison
+
+    # ========== 架构相关（AI Agent 常见错误）============
+    # 以下规则帮助 AI Agent 避免架构违规
+    - avoid_classes_with_only_static_members
+    - avoid_private_typedef_functions
+    - avoid_returning_null_for_void
+    - avoid_returning_this
+    - avoid_slow_async_io
+    - avoid_type_to_string
+    - cancel_subscriptions
+    - close_sinks
+    - comment_references
+    - control_flow_in_finally
+    - empty_statements
+    - hash_and_equals
+    - invariant_booleans
+    - iteration_over_index
+    - list_length_unspecified
+    - literal_only_boolean_expressions
+    - no_adjacent_strings_in_list
+    - only_throw_errors
+    - overridden_fields
+    - package_api_docs
+    - package_names
+    - package_prefixed_library_names
+    - prefer_asserts_in_initializer_lists
+    - prefer_asserts_in_numeric_constructors
+    - prefer_typing_uninitialized_variables
+    - provide_deprecation_message
+    - unnecessary_raw_strings
+    - unnecessary_string_escapes
+    - use_build_context_synchronously
+    - use_key_in_widget_constructors
+    - use_late_for_private_fields_and_variables
+    - use_rethrow
+    - avoid_void_async

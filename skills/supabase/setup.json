@@ -1,0 +1,21 @@
+{
+  "setupComplete": false,
+  "prerequisites": {
+    "supabaseProject": {
+      "required": true,
+      "installed": false,
+      "description": "Supabase 项目 URL 和 ANON_KEY"
+    },
+    "dependencies": {
+      "required": true,
+      "installed": false,
+      "description": "Node.js dependencies (npm install completed)"
+    }
+  },
+  "setupInstructions": [
+    "1. 配置 Supabase 项目信息",
+    "2. 运行: npm install",
+    "3. 验证配置: node index.js --test"
+  ],
+  "verifySetup": "运行测试命令验证安装"
+}

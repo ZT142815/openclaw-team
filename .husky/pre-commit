@@ -1,0 +1,139 @@
+#!/bin/sh
+# Pre-commit Hook
+#
+# 在每次 git commit 前自动运行检查
+# 确保代码满足 Clean State 标准
+# 确保 Harness 状态文件已更新
+
+set -e
+
+echo "🔍 Running pre-commit checks..."
+
+# 项目根目录
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+
+# ============================================
+# Step 1: Flutter Analyze
+# ============================================
+echo ""
+echo "📊 Step 1: Flutter Analyze"
+cd "$REPO_ROOT"
+if ! flutter analyze > /tmp/flutter_analyze.log 2>&1; then
+    echo "❌ Flutter Analyze FAILED"
+    cat /tmp/flutter_analyze.log
+    exit 1
+fi
+echo "✅ Flutter Analyze passed"
+
+# ============================================
+# Step 2: Architecture Check
+# ============================================
+echo ""
+echo "📊 Step 2: Architecture Check"
+ARCH_SCRIPT="$REPO_ROOT/.openclaw/workspace-developer/scripts/architecture-check.js"
+if [ -f "$ARCH_SCRIPT" ]; then
+    if ! node "$ARCH_SCRIPT" --path "$REPO_ROOT/lib" > /tmp/arch_check.log 2>&1; then
+        echo "❌ Architecture Check FAILED"
+        cat /tmp/arch_check.log
+        exit 1
+    fi
+    echo "✅ Architecture Check passed"
+else
+    echo "⚠️  Architecture check script not found, skipping"
+fi
+
+# ============================================
+# Step 3: Harness Status Check
+# ============================================
+echo ""
+echo "📊 Step 3: Harness Status Check"
+
+PROGRESS_FILE="$REPO_ROOT/progress.txt"
+FEATURE_FILE="$REPO_ROOT/feature_list.json"
+
+if [ -f "$PROGRESS_FILE" ]; then
+    echo "✅ progress.txt exists"
+
+    # 检查 progress.txt 是否有未完成的 session 记录
+    LAST_SESSION=$(grep -c "\[SESSION\]" "$PROGRESS_FILE" 2>/dev/null || echo "0")
+    if [ "$LAST_SESSION" -gt 0 ]; then
+        echo "   Session 历史: $LAST_SESSION 条"
+    fi
+else
+    echo "⚠️  progress.txt not found (项目可能未初始化 Harness)"
+fi
+
+if [ -f "$FEATURE_FILE" ]; then
+    echo "✅ feature_list.json exists"
+
+    # 检查 feature_list.json 格式是否有效
+    if command -v node > /dev/null 2>&1; then
+        FEATURE_SCRIPT="$HOME/.openclaw/workspace-developer/scripts/feature-list.js"
+        if [ -f "$FEATURE_SCRIPT" ]; then
+            if ! node "$FEATURE_SCRIPT" --project "$REPO_ROOT" --action validate > /tmp/feature_validate.log 2>&1; then
+                echo "⚠️  feature_list.json 验证有警告"
+                cat /tmp/feature_validate.log | grep -E "(警告|WARNING)" || true
+            fi
+        fi
+    fi
+
+    # 统计进度
+    TOTAL=$(grep -o '"total": [0-9]*' "$FEATURE_FILE" 2>/dev/null | grep -o '[0-9]*' || echo "0")
+    PASSED=$(grep -o '"passed": [0-9]*' "$FEATURE_FILE" 2>/dev/null | grep -o '[0-9]*' || echo "0")
+    echo "   功能进度: $PASSED/$TOTAL 已通过"
+else
+    echo "⚠️  feature_list.json not found (项目可能未初始化 Harness)"
+fi
+
+# ============================================
+# Step 4: Format Check
+# ============================================
+echo ""
+echo "📊 Step 4: Format Check"
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep '\.dart$' || true)
+if [ -n "$STAGED_FILES" ]; then
+    for file in $STAGED_FILES; do
+        if [ -f "$file" ]; then
+            # 检查文件末尾是否有连续空行
+            if [ $(tail -c 2 "$file" | xxd -p) = "0a0a" ]; then
+                echo "❌ File has trailing whitespace: $file"
+                exit 1
+            fi
+        fi
+    done
+    echo "✅ Format Check passed"
+else
+    echo "ℹ️  No Dart files staged, skipping format check"
+fi
+
+# ============================================
+# Step 5: Test Check (if tests exist)
+# ============================================
+echo ""
+echo "📊 Step 5: Quick Test Check"
+if [ -d "$REPO_ROOT/test" ]; then
+    if [ -n "$(find "$REPO_ROOT/test" -name '*_test.dart' 2>/dev/null)" ]; then
+        echo "   运行测试..."
+        if ! flutter test --no-pub > /tmp/test_results.log 2>&1; then
+            echo "❌ Tests FAILED"
+            cat /tmp/test_results.log
+            exit 1
+        fi
+        echo "✅ Tests passed"
+    else
+        echo "ℹ️  No test files found, skipping"
+    fi
+else
+    echo "ℹ️  No test directory, skipping"
+fi
+
+# ============================================
+# 完成
+# ============================================
+echo ""
+echo "✅ All pre-commit checks passed!"
+echo ""
+echo "📋 Harness 状态:"
+echo "   项目: $(basename "$REPO_ROOT")"
+[ -f "$FEATURE_FILE" ] && echo "   功能: $PASSED/$TOTAL" || true
+echo ""
