@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-10T17:02:48.583Z",
+  "timestamp": "2026-04-10T22:02:52.724Z",
   "totalJobs": 3,
   "healthyJobs": 3,
   "warningJobs": 0,
@@ -14,32 +14,14 @@
       "consecutiveErrors": 0,
       "lastRunStatus": "ok",
       "lastError": "",
-      "lastDuration": 134597,
+      "lastDuration": 152437,
       "errorType": null,
       "recoverySuggestion": null,
-      "nextRun": "2026-04-10T17:02:20.192Z",
-      "lastRun": "2026-04-10T16:32:20.192Z",
+      "nextRun": "2026-04-10T22:02:20.252Z",
+      "lastRun": "2026-04-10T21:32:20.252Z",
       "schedule": "every 30m",
       "deliveryStatus": "delivered",
       "sessionTarget": "isolated"
-    },
-    {
-      "id": "fc9f8e6d-7cba-46be-87ac-97cb668af5a8",
-      "name": "Memory Dreaming Promotion",
-      "status": "healthy",
-      "severity": "none",
-      "rawStatus": "ok",
-      "consecutiveErrors": 0,
-      "lastRunStatus": "ok",
-      "lastError": "",
-      "lastDuration": 11,
-      "errorType": null,
-      "recoverySuggestion": null,
-      "nextRun": "2026-04-10T19:00:00.000Z",
-      "lastRun": "2026-04-09T19:00:00.009Z",
-      "schedule": "cron 0 3 * * *",
-      "deliveryStatus": "not-requested",
-      "sessionTarget": "main"
     },
     {
       "id": "2d673f30-0d1a-43d3-9f6a-d8d94082cda3",
@@ -58,6 +40,24 @@
       "schedule": "cron 0 21 * * * @ Asia/Shanghai",
       "deliveryStatus": "not-delivered",
       "sessionTarget": "current"
+    },
+    {
+      "id": "fc9f8e6d-7cba-46be-87ac-97cb668af5a8",
+      "name": "Memory Dreaming Promotion",
+      "status": "healthy",
+      "severity": "none",
+      "rawStatus": "ok",
+      "consecutiveErrors": 0,
+      "lastRunStatus": "ok",
+      "lastError": "",
+      "lastDuration": 6,
+      "errorType": null,
+      "recoverySuggestion": null,
+      "nextRun": "2026-04-11T19:00:00.000Z",
+      "lastRun": "2026-04-10T19:00:00.007Z",
+      "schedule": "cron 0 3 * * *",
+      "deliveryStatus": "not-requested",
+      "sessionTarget": "main"
     }
   ]
 }
