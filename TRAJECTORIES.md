@@ -1,216 +1,103 @@
 # TRAJECTORIES.md - 经验轨迹库
 
-> **版本**：v1.0
-> **作用**：结构化记录每次执行的轨迹，积累协调经验
-> **参考**：OpenAI "仓库是唯一事实源" + Anthropic 轨迹记录最佳实践
-> **位置**：~/.openclaw/trajectories/
+> **版本**: v1.0
+> **日期**: 2026-04-10
+> **维护**: 自动由 Steering Loop 更新
 
 ---
 
-## 一、核心概念
+## 概述
 
-**轨迹（Trajectory）** = 一次完整的任务执行记录，包含：
-- 任务目标
-- 执行步骤
-- Agent 协作模式
-- 成功/失败结果
-- 经验教训
+TRAJECTORIES.md 记录 Developer Agent 的关键任务执行轨迹，包括成功经验、失败教训和可复用的模式。
 
-**轨迹库价值**：
-- 相似任务可直接复用经验
-- 失败模式可被识别和避免
-- 系统可从历史中学习
+**实际存储位置**: `~/.openclaw/trajectories/` (统一轨迹存储)
+- `index.json` - 轨迹索引
+- `patterns/patterns.json` - 模式库
+- `YYYY-MM/` - 按月归档
 
 ---
 
-## 二、轨迹格式
+## 轨迹索引 (index.json)
 
 ```json
 {
-  "trajectory_id": "T20260409-001",
-  "project": "budolist",
-  "task_type": "feature_development",
-  "start_time": "2026-04-09T10:00:00+08:00",
-  "end_time": "2026-04-09T11:30:00+08:00",
-  "duration_minutes": 90,
-  "agents": ["developer", "tester"],
-  "topology": "sequential",
-  "task": {
-    "feature_id": "F001",
-    "title": "用户注册",
-    "description": "实现邮箱注册功能"
-  },
-  "execution": {
-    "steps": [
-      {
-        "step": 1,
-        "agent": "developer",
-        "action": "implement",
-        "feature": "F001",
-        "duration_minutes": 45,
-        "artifacts": ["lib/services/auth_service.dart"],
-        "commits": ["abc1234"]
-      },
-      {
-        "step": 2,
-        "agent": "tester",
-        "action": "test",
-        "feature": "F001",
-        "duration_minutes": 30,
-        "bugs_found": 1,
-        "bug_severity": "P2"
-      }
-    ],
-    "token_consumption": {
-      "developer": 15000,
-      "tester": 8000,
-      "total": 23000
-    }
-  },
-  "outcome": {
-    "status": "success",
-    "quality_score": 85,
-    "blocks_merged": 1
-  },
-  "lessons_learned": [
-    "注册验证逻辑应拆分为独立函数",
-    "测试用例应覆盖边界条件"
-  ],
-  "patterns": [
-    "sequential_topology",
-    "single_feature_per_session"
-  ]
-}
-```
-
----
-
-## 三、轨迹分类
-
-### 3.1 按任务类型
-
-| 类型 | 说明 | 示例 |
-|------|------|------|
-| `feature_development` | 功能开发 | 开发 F001 用户注册 |
-| `bug_fix` | Bug 修复 | 修复 F001 的登录 Bug |
-| `prd_research` | PRD 研究 | 市场分析、竞品调研 |
-| `architecture_design` | 架构设计 | 技术方案设计 |
-
-### 3.2 按协作模式
-
-| 模式 | 说明 | 适用场景 |
-|------|------|---------|
-| `sequential` | 顺序执行 | Developer → Tester |
-| `parallel` | 并行执行 | Product 市场分析 + Developer 技术设计 |
-| `hierarchical` | 分层执行 | CEO → Product/Developer/Tester |
-
-### 3.3 按结果
-
-| 结果 | 说明 |
-|------|------|
-| `success` | 任务完成，质量合格 |
-| `partial_success` | 完成但有问题 |
-| `failed` | 任务失败 |
-
----
-
-## 四、轨迹分析
-
-### 4.1 成功模式识别
-
-```
-成功轨迹特征：
-- [模式1]：sequential + single_feature → 成功率 95%
-- [模式2]：parallel + independent_tasks → 效率提升 40%
-- [模式3]：context_usage < 40% → 质量分数高 20%
-```
-
-### 4.2 失败模式识别
-
-```
-失败轨迹特征：
-- [模式1]：parallel + dependent_tasks → 冲突率 60%
-- [模式2]：context_usage > 60% → 质量分数低 35%
-- [模式3]：无 Evaluator → 问题漏检率 40%
-```
-
----
-
-## 五、轨迹库存储
-
-### 目录结构
-
-```
-~/.openclaw/trajectories/
-├── YYYY-MM/
-│   ├── T20260409-001.json  # 单个轨迹
-│   ├── T20260409-002.json
-│   └── ...
-├── index.json              # 轨迹索引
-└── patterns/
-    └── patterns.json       # 识别出的模式
-```
-
-### 索引格式
-
-```json
-{
-  "last_updated": "2026-04-09T12:00:00+08:00",
-  "total_trajectories": 50,
+  "last_updated": "2026-04-09T17:02:00+08:00",
+  "total_trajectories": 1,
   "by_project": {
-    "budolist": 30,
-    "other": 20
+    "test-run-v2": 1
   },
   "by_outcome": {
-    "success": 40,
-    "partial_success": 8,
-    "failed": 2
+    "success": 1,
+    "partial_success": 0,
+    "failed": 0
   },
   "by_task_type": {
-    "feature_development": 25,
-    "bug_fix": 15,
-    "prd_research": 7,
-    "architecture_design": 3
+    "feature_development": 1,
+    "bug_fix": 0,
+    "prd_research": 0,
+    "architecture_design": 0
   }
 }
 ```
 
 ---
 
-## 六、轨迹复用
+## 模式库 (patterns/patterns.json)
 
-当新任务开始时：
-
-```
-1. 检索相似轨迹
-   └── task_type = "feature_development"
-   └── feature_category = "auth"
-   └── outcome = "success"
-
-2. 提取经验
-   └── 成功模式：sequential + single_feature
-   └── Token 消耗参考：23000
-   └── 质量分数参考：85
-
-3. 应用到新任务
-   └── 采用相同的协作模式
-   └── 预算相似的 Token 消耗
-   └── 设置质量期望
-```
+> 由 Steering Loop 自动分析生成
 
 ---
 
-## 七、维护规则
+## 经验总结
 
-| 动作 | 时机 | 执行者 |
-|------|------|--------|
-| 记录轨迹 | 每次任务完成 | Agent |
-| 更新索引 | 每次新轨迹 | 自动 |
-| 分析模式 | 每周 | CEO |
-| 归档旧轨迹 | 每月 | CEO |
+### 架构设计
+
+| 模式 | 说明 | 适用场景 |
+|------|------|---------|
+| 多Agent协作 | CEO→Product→Developer→Tester 流水线 | 新App开发 |
+| Feedforward优先 | pre-commit + lint 在前，快速失败 | 所有代码变更 |
+| Feedback监控 | drift-monitor + evaluator 在后，持续质量 | 长期项目 |
+
+### 交接协议
+
+| 模式 | 说明 | 验收标准 |
+|------|------|---------|
+| Handoff Artifact | JSON格式结构化交接 | validated: true |
+| 阶段交付物 | 每个阶段明确的产出 | 文件路径 + 状态 |
+
+### 质量保障
+
+| 模式 | 说明 | 触发条件 |
+|------|------|---------|
+| context 40%压缩 | Smart Zone 管理 | context >= 40% |
+| 安全扫描 | security-scan.js | 每次代码变更 |
+| 性能基准 | performance-test.js | 复杂App/重构后 |
 
 ---
 
-## 八、版本历史
+## 失败模式 (来自 FAILURES.md)
 
-- v1.0（2026-04-09）：初始版本
+### #1: Context Overflow
+- **时间**: 2026-04-09
+- **原因**: 长时间对话导致context超过80%阈值
+- **改进**: 降低context阈值到40%，增加压缩频率
+
+### #2: Handoff Missing
+- **时间**: 2026-04-09
+- **原因**: Product Agent和Developer Agent交接时缺少关键信息
+- **改进**: 强化handoff checklist，必填字段校验
+
+### #3: Context Overflow (批量操作)
+- **时间**: 2026-04-09
+- **原因**: 批量创建文档时context快速增长
+- **改进**: 增加context-compaction skill触发频率
+
+---
+
+## Steering Loop 分析
+
+> 由 `steering-loop.js` 自动生成
+
+---
+
+**最后更新**: 2026-04-10

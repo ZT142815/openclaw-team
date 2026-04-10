@@ -1,0 +1,27 @@
+{
+  "bugs": [
+    {
+      "id": "BUG-001",
+      "title": "测试Bug: 熵管理系统API错误",
+      "severity": "S1",
+      "status": "Closed",
+      "description": "entropy-management cron连续5次失败，错误为Feishu API 400",
+      "platform": "OpenClaw",
+      "version": "N/A",
+      "created": "2026-04-10T09:36:13.685Z",
+      "updated": "2026-04-10T09:36:21.078Z",
+      "assignee": "",
+      "closed": "2026-04-10T09:36:21.078Z"
+    }
+  ],
+  "last_updated": "2026-04-10",
+  "stats": {
+    "total": 1,
+    "s0": 0,
+    "s1": 1,
+    "s2": 0,
+    "s3": 0,
+    "open": 0,
+    "closed": 1
+  }
+}

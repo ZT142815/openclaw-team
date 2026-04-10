@@ -1,0 +1,77 @@
+{
+  "version": 3,
+  "files": {
+    "developer:sessions/5e6ee4d9-8a67-49fa-acbd-a2386af77fcd.jsonl": {
+      "mtimeMs": 1775728150052,
+      "size": 57131,
+      "contentHash": "06377fdf48e0508b820d673df34374b7a88fea685c791887358e7ca487f75854",
+      "lineCount": 5,
+      "lastContentLine": 5
+    },
+    "developer:sessions/923433be-6808-43d7-aaf8-d04f0d4023c6.jsonl": {
+      "mtimeMs": 1775723889557,
+      "size": 15375,
+      "contentHash": "c8607fa7e959fb6d7089e6a7a65e21b5fc04bceb1d564a1fa9ebc3f57318b371",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "developer:sessions/a9e88b6e-195c-489c-8d5d-07abcf68675b.jsonl": {
+      "mtimeMs": 1775724025295,
+      "size": 18393,
+      "contentHash": "4145a8ce80815f0abcde77e9d4a255537b34c40176f804e331f1f9d252853aae",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "developer:sessions/b1df039d-7c9a-40a7-8b29-504390801a2f.jsonl": {
+      "mtimeMs": 1775724187359,
+      "size": 13874,
+      "contentHash": "4b2a80a81b46cb3802e0375c64bcce3d519a760086891c2fc9cdbbaa6a194a8f",
+      "lineCount": 3,
+      "lastContentLine": 3
+    },
+    "developer:sessions/c21f491d-010b-4226-87ae-1ce46c25a645.jsonl": {
+      "mtimeMs": 1775735293893,
+      "size": 72218,
+      "contentHash": "bf3fdc1545254e80a66adb327f254fa21a4e69fde2b08b33feda1c07444d3476",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "developer:sessions/cbe64c13-9c69-47d3-82e5-535a5a30b37d.jsonl": {
+      "mtimeMs": 1775725135300,
+      "size": 14330,
+      "contentHash": "d7b1c507bcc9d903c7b2fdf765b59d3c07c642c11d4919c83962c1b380892f50",
+      "lineCount": 2,
+      "lastContentLine": 2
+    }
+  },
+  "seenMessages": {
+    "developer:5e6ee4d9-8a67-49fa-acbd-a2386af77fcd": [
+      "7d4cd909c031882e6117790248b823802012106f",
+      "5f3232204ed57f5151b4f1cbb661e7dabee67565",
+      "1d4308a314fd30ff0cdf5dee521d23bced03a3df",
+      "011b1a485935700ae08a3c60b203169d48d72bf9",
+      "cf1e51e12bbadbeaf94cf3732af14e3dab65bc72"
+    ],
+    "developer:923433be-6808-43d7-aaf8-d04f0d4023c6": [
+      "9f771c7d6363bf581aefc196ba961395d6108f06",
+      "71510d59ac9f8e30720dfc86b986a1e2acfd62fe"
+    ],
+    "developer:a9e88b6e-195c-489c-8d5d-07abcf68675b": [
+      "9d4f2240926f7028eb5f6f37ce1e6e8e0f7a2672",
+      "6dc3726cd809b16cdac121d7c8a00515064b8027"
+    ],
+    "developer:b1df039d-7c9a-40a7-8b29-504390801a2f": [
+      "2004d0569d14dc32e4a857229a2cdba6baf76eb5",
+      "222ba0837d12298be72399267a2ac657c78a38e4",
+      "9dbe4aef76706f771c0ee7d69d68f08f486a7f52"
+    ],
+    "developer:c21f491d-010b-4226-87ae-1ce46c25a645": [
+      "bec764139e340fec865b21c447d30c595e847e59",
+      "8fd0c71f440b99515d1aac442259a0cc783e6480"
+    ],
+    "developer:cbe64c13-9c69-47d3-82e5-535a5a30b37d": [
+      "487d870ad480371497d386812b9d900aff088c68",
+      "84c0096bdf2c99ec17ed09c959606fb180fb4640"
+    ]
+  }
+}
