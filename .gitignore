@@ -1,0 +1,61 @@
+# Dependencies
+node_modules/
+.pub-cache/
+.dart_tool/
+
+# Build outputs
+build/
+*.class
+*.jar
+*.apk
+*.ipa
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OpenClaw
+.openclaw/workspace-state.json
+.openclaw/credentials/
+
+# Reports
+reports/*.json
+reports/*.html
+monitoring/*.json
+
+# Temporary
+tmp/
+temp/
+*.tmp
+
+# Secrets (never commit)
+*secret*
+*credential*
+*.pem
+*.key
+
+# Flutter
+.packages
+.version
+flutter_*.json
+pubspec.lock
+
+# iOS
+ios/Pods/
+ios/*.xcworkspace
+
+# Android
+android/.gradle/
+android/app/build/
