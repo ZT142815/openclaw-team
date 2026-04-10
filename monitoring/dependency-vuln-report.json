@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-04-10T17:36:15.011Z",
+  "scan_dir": "/Users/zhoutao/.openclaw/workspace-developer",
+  "lock_files_found": 1,
+  "packages_scanned": 13,
+  "vulnerabilities": [],
+  "summary": {
+    "total": 0,
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "status": "healthy"
+}
