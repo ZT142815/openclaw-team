@@ -1,0 +1,20 @@
+# Code Owners - 自动分配 PR 审查任务
+# 格式: pattern owner1 owner2 ...
+
+# 默认所有者（CEO）
+* @ZT142815
+
+# Flutter 应用代码
+# *.dart @ZT142815
+
+# CI/CD 配置
+.github/ @ZT142815
+.github/workflows/ @ZT142815
+
+# 安全相关
+*security* @ZT142815
+*vuln* @ZT142815
+
+# 文档
+*.md @ZT142815
+docs/ @ZT142815
