@@ -1,45 +1,8 @@
 {
-  "timestamp": "2026-04-11T19:34:36.306Z",
-  "totalJobs": 3,
-  "healthyJobs": 3,
+  "timestamp": "2026-04-11T20:02:50.668Z",
+  "totalJobs": 0,
+  "healthyJobs": 0,
   "warningJobs": 0,
   "criticalJobs": 0,
-  "jobs": [
-    {
-      "id": "16320247-d445-4075-8408-a14de831f236",
-      "name": "auto-capability-improve",
-      "status": "healthy",
-      "severity": "none",
-      "rawStatus": "ok",
-      "consecutiveErrors": 0,
-      "lastRunStatus": "ok",
-      "lastDuration": 63772,
-      "deliveryStatus": "delivered",
-      "sessionTarget": "isolated"
-    },
-    {
-      "id": "2d673f30-0d1a-43d3-9f6a-d8d94082cda3",
-      "name": "entropy-management",
-      "status": "healthy",
-      "severity": "none",
-      "rawStatus": "ok",
-      "consecutiveErrors": 0,
-      "lastRunStatus": "ok",
-      "lastDuration": 15733,
-      "deliveryStatus": "not-delivered",
-      "sessionTarget": "current"
-    },
-    {
-      "id": "fc9f8e6d-7cba-46be-87ac-97cb668af5a8",
-      "name": "Memory Dreaming Promotion",
-      "status": "healthy",
-      "severity": "none",
-      "rawStatus": "ok",
-      "consecutiveErrors": 0,
-      "lastRunStatus": "ok",
-      "lastDuration": 3,
-      "deliveryStatus": "not-requested",
-      "sessionTarget": "main"
-    }
-  ]
+  "jobs": []
 }
