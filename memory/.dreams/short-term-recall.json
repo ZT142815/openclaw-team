@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-11T19:00:04.258Z",
+  "updatedAt": "2026-04-11T19:30:04.310Z",
   "entries": {
     "memory:memory/2026-04-08.md:3:4": {
       "key": "memory:memory/2026-04-08.md:3:4",
@@ -14,7 +14,7 @@
       "totalScore": 0.62,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-09T19:00:01.124Z",
-      "lastRecalledAt": "2026-04-11T19:00:04.258Z",
+      "lastRecalledAt": "2026-04-11T19:30:04.213Z",
       "queryHashes": [
         "4320a7af2f21"
       ],
@@ -43,7 +43,7 @@
       "totalScore": 0.62,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-09T19:00:01.124Z",
-      "lastRecalledAt": "2026-04-11T19:00:04.258Z",
+      "lastRecalledAt": "2026-04-11T19:30:04.213Z",
       "queryHashes": [
         "4320a7af2f21"
       ],
@@ -75,7 +75,7 @@
       "totalScore": 0.62,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-09T19:00:01.124Z",
-      "lastRecalledAt": "2026-04-11T19:00:04.258Z",
+      "lastRecalledAt": "2026-04-11T19:30:04.213Z",
       "queryHashes": [
         "4320a7af2f21"
       ],
@@ -799,6 +799,126 @@
       "recallDays": [
         "2026-04-11",
         "2026-04-10"
+      ],
+      "conceptTags": [
+        "possible",
+        "lasting",
+        "truths",
+        "strong",
+        "candidate",
+        "surfaced"
+      ]
+    },
+    "memory:memory/2026-04-12.md:113:116": {
+      "key": "memory:memory/2026-04-12.md:113:116",
+      "path": "memory/2026-04-12.md",
+      "startLine": 113,
+      "endLine": 116,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `assistant` kept surfacing across 14 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-09.txt:2-2, memory/.dreams/session-corpus/2026-04-09.txt:3-3, memory/.dreams/session-corpus/2026-04-09.txt:4-4; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-11T19:30:04.213Z",
+      "lastRecalledAt": "2026-04-11T19:30:04.213Z",
+      "queryHashes": [
+        "01679c334ef2"
+      ],
+      "recallDays": [
+        "2026-04-12",
+        "2026-04-11"
+      ],
+      "conceptTags": [
+        "1.00",
+        "2-2",
+        "3-3",
+        "4-4",
+        "reflections",
+        "theme",
+        "assistant",
+        "kept"
+      ]
+    },
+    "memory:memory/2026-04-12.md:119:119": {
+      "key": "memory:memory/2026-04-12.md:119:119",
+      "path": "memory/2026-04-12.md",
+      "startLine": 119,
+      "endLine": 119,
+      "source": "memory",
+      "snippet": "Possible Lasting Truths: No strong candidate truths surfaced.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-11T19:30:04.213Z",
+      "lastRecalledAt": "2026-04-11T19:30:04.213Z",
+      "queryHashes": [
+        "01679c334ef2"
+      ],
+      "recallDays": [
+        "2026-04-12",
+        "2026-04-11"
+      ],
+      "conceptTags": [
+        "possible",
+        "lasting",
+        "truths",
+        "strong",
+        "candidate",
+        "surfaced"
+      ]
+    },
+    "memory:memory/2026-04-12.md:123:126": {
+      "key": "memory:memory/2026-04-12.md:123:126",
+      "path": "memory/2026-04-12.md",
+      "startLine": 123,
+      "endLine": 126,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `assistant` kept surfacing across 14 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-09.txt:2-2, memory/.dreams/session-corpus/2026-04-09.txt:3-3, memory/.dreams/session-corpus/2026-04-09.txt:4-4; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-11T19:30:04.213Z",
+      "lastRecalledAt": "2026-04-11T19:30:04.213Z",
+      "queryHashes": [
+        "01679c334ef2"
+      ],
+      "recallDays": [
+        "2026-04-12",
+        "2026-04-11"
+      ],
+      "conceptTags": [
+        "1.00",
+        "2-2",
+        "3-3",
+        "4-4",
+        "reflections",
+        "theme",
+        "assistant",
+        "kept"
+      ]
+    },
+    "memory:memory/2026-04-12.md:129:129": {
+      "key": "memory:memory/2026-04-12.md:129:129",
+      "path": "memory/2026-04-12.md",
+      "startLine": 129,
+      "endLine": 129,
+      "source": "memory",
+      "snippet": "Possible Lasting Truths: No strong candidate truths surfaced.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-11T19:30:04.213Z",
+      "lastRecalledAt": "2026-04-11T19:30:04.213Z",
+      "queryHashes": [
+        "01679c334ef2"
+      ],
+      "recallDays": [
+        "2026-04-12",
+        "2026-04-11"
       ],
       "conceptTags": [
         "possible",
