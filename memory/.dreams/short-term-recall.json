@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-12T04:03:56.409Z",
+  "updatedAt": "2026-04-12T19:00:05.301Z",
   "entries": {
     "memory:memory/2026-04-08.md:3:4": {
       "key": "memory:memory/2026-04-08.md:3:4",
@@ -14,7 +14,7 @@
       "totalScore": 0.62,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-09T19:00:01.124Z",
-      "lastRecalledAt": "2026-04-12T04:03:56.409Z",
+      "lastRecalledAt": "2026-04-12T19:00:05.190Z",
       "queryHashes": [
         "4320a7af2f21"
       ],
@@ -44,7 +44,7 @@
       "totalScore": 0.62,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-09T19:00:01.124Z",
-      "lastRecalledAt": "2026-04-12T04:03:56.409Z",
+      "lastRecalledAt": "2026-04-12T19:00:05.190Z",
       "queryHashes": [
         "4320a7af2f21"
       ],
@@ -77,7 +77,7 @@
       "totalScore": 0.62,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-09T19:00:01.124Z",
-      "lastRecalledAt": "2026-04-12T04:03:56.409Z",
+      "lastRecalledAt": "2026-04-12T19:00:05.190Z",
       "queryHashes": [
         "4320a7af2f21"
       ],
@@ -944,7 +944,7 @@
       "totalScore": 0.62,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-12T00:03:56.365Z",
-      "lastRecalledAt": "2026-04-12T04:03:56.409Z",
+      "lastRecalledAt": "2026-04-12T19:00:05.190Z",
       "queryHashes": [
         "01679c334ef2"
       ],
@@ -974,7 +974,7 @@
       "totalScore": 0.62,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-12T00:03:56.365Z",
-      "lastRecalledAt": "2026-04-12T04:03:56.409Z",
+      "lastRecalledAt": "2026-04-12T19:00:05.190Z",
       "queryHashes": [
         "01679c334ef2"
       ],
@@ -988,6 +988,128 @@
         "strong",
         "candidate",
         "surfaced"
+      ]
+    },
+    "memory:memory/2026-04-13.md:6:8": {
+      "key": "memory:memory/2026-04-13.md:6:8",
+      "path": "memory/2026-04-13.md",
+      "startLine": 6,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "系统健康检查: Cron: 2/3 健康 (auto-capability-improve 警告, Memory Dreaming ✅, entropy-management ✅); Metrics: Health Score 83/100 (因 auto-capability-improve 警告); entropy-check: 通过 (8个 symlinks 已修复)",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-12T19:00:05.190Z",
+      "lastRecalledAt": "2026-04-12T19:00:05.190Z",
+      "queryHashes": [
+        "0dac2e09ca9b"
+      ],
+      "recallDays": [
+        "2026-04-13",
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "2/3",
+        "auto-capability-improve",
+        "entropy-management",
+        "83/100",
+        "entropy-check",
+        "系统",
+        "健康",
+        "检查"
+      ]
+    },
+    "memory:memory/2026-04-13.md:11:11": {
+      "key": "memory:memory/2026-04-13.md:11:11",
+      "path": "memory/2026-04-13.md",
+      "startLine": 11,
+      "endLine": 11,
+      "source": "memory",
+      "snippet": "Git Sync: workspace-developer: 已推送 (6c171e0 → origin/master)",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-12T19:00:05.190Z",
+      "lastRecalledAt": "2026-04-12T19:00:05.190Z",
+      "queryHashes": [
+        "0dac2e09ca9b"
+      ],
+      "recallDays": [
+        "2026-04-13",
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "workspace-developer",
+        "origin/master",
+        "git",
+        "sync",
+        "developer",
+        "推送",
+        "6c171e0",
+        "origin"
+      ]
+    },
+    "memory:memory/2026-04-13.md:14:15": {
+      "key": "memory:memory/2026-04-13.md:14:15",
+      "path": "memory/2026-04-13.md",
+      "startLine": 14,
+      "endLine": 15,
+      "source": "memory",
+      "snippet": "待处理: auto-capability-improve 警告为历史已知模式 (状态上报异常但任务实际完成且 delivered); P0 阻断: Feishu Bot Token (需用户操作)",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-12T19:00:05.190Z",
+      "lastRecalledAt": "2026-04-12T19:00:05.190Z",
+      "queryHashes": [
+        "0dac2e09ca9b"
+      ],
+      "recallDays": [
+        "2026-04-13",
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "auto-capability-improve",
+        "处理",
+        "auto",
+        "capability",
+        "improve",
+        "警告",
+        "历史",
+        "已知"
+      ]
+    },
+    "memory:memory/2026-04-13.md:18:18": {
+      "key": "memory:memory/2026-04-13.md:18:18",
+      "path": "memory/2026-04-13.md",
+      "startLine": 18,
+      "endLine": 18,
+      "source": "memory",
+      "snippet": "23:03 - 上次改进 (v103): Cron: 3/3 健康",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-12T19:00:05.190Z",
+      "lastRecalledAt": "2026-04-12T19:00:05.190Z",
+      "queryHashes": [
+        "0dac2e09ca9b"
+      ],
+      "recallDays": [
+        "2026-04-13",
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "3/3",
+        "上次",
+        "改进",
+        "v103",
+        "cron",
+        "健康"
       ]
     }
   }
