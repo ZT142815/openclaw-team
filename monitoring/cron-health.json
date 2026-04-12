@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-12T05:02:48.888Z",
+  "timestamp": "2026-04-12T05:32:53.778Z",
   "totalJobs": 3,
   "healthyJobs": 3,
   "warningJobs": 0,
@@ -14,11 +14,11 @@
       "consecutiveErrors": 0,
       "lastRunStatus": "ok",
       "lastError": "",
-      "lastDuration": 79081,
+      "lastDuration": 72152,
       "errorType": null,
       "recoverySuggestion": null,
-      "nextRun": "2026-04-12T05:02:22.787Z",
-      "lastRun": "2026-04-12T04:32:22.787Z",
+      "nextRun": "2026-04-12T05:32:22.793Z",
+      "lastRun": "2026-04-12T05:02:22.793Z",
       "schedule": "every 30m",
       "deliveryStatus": "delivered",
       "sessionTarget": "isolated"
