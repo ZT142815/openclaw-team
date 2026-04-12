@@ -1,45 +1,27 @@
 {
-  "timestamp": "2026-04-12T12:32:55.881Z",
+  "timestamp": "2026-04-12T13:03:00.470Z",
   "totalJobs": 3,
-  "healthyJobs": 2,
-  "warningJobs": 1,
+  "healthyJobs": 3,
+  "warningJobs": 0,
   "criticalJobs": 0,
   "jobs": [
     {
       "id": "16320247-d445-4075-8408-a14de831f236",
       "name": "auto-capability-improve",
-      "status": "warning",
-      "severity": "medium",
-      "rawStatus": "error",
-      "consecutiveErrors": 1,
-      "lastRunStatus": "error",
-      "lastError": "",
-      "lastDuration": 121164,
-      "errorType": "unknown",
-      "recoverySuggestion": "检查 cron 任务配置和日志",
-      "nextRun": "2026-04-12T12:32:22.884Z",
-      "lastRun": "2026-04-12T12:02:22.884Z",
-      "schedule": "every 30m",
-      "deliveryStatus": "delivered",
-      "sessionTarget": "isolated"
-    },
-    {
-      "id": "2d673f30-0d1a-43d3-9f6a-d8d94082cda3",
-      "name": "entropy-management",
       "status": "healthy",
       "severity": "none",
       "rawStatus": "ok",
       "consecutiveErrors": 0,
       "lastRunStatus": "ok",
       "lastError": "",
-      "lastDuration": 15733,
+      "lastDuration": 156419,
       "errorType": null,
       "recoverySuggestion": null,
-      "nextRun": "2026-04-12T13:00:00.000Z",
-      "lastRun": "2026-04-11T13:00:00.005Z",
-      "schedule": "cron 0 21 * * * @ Asia/Shanghai",
-      "deliveryStatus": "not-delivered",
-      "sessionTarget": "current"
+      "nextRun": "2026-04-12T13:02:22.899Z",
+      "lastRun": "2026-04-12T12:32:22.899Z",
+      "schedule": "every 30m",
+      "deliveryStatus": "delivered",
+      "sessionTarget": "isolated"
     },
     {
       "id": "fc9f8e6d-7cba-46be-87ac-97cb668af5a8",
@@ -58,6 +40,24 @@
       "schedule": "cron 0 3 * * *",
       "deliveryStatus": "not-requested",
       "sessionTarget": "main"
+    },
+    {
+      "id": "2d673f30-0d1a-43d3-9f6a-d8d94082cda3",
+      "name": "entropy-management",
+      "status": "healthy",
+      "severity": "none",
+      "rawStatus": "ok",
+      "consecutiveErrors": 0,
+      "lastRunStatus": "ok",
+      "lastError": "",
+      "lastDuration": 18177,
+      "errorType": null,
+      "recoverySuggestion": null,
+      "nextRun": "2026-04-13T13:00:00.000Z",
+      "lastRun": "2026-04-12T13:00:00.007Z",
+      "schedule": "cron 0 21 * * * @ Asia/Shanghai",
+      "deliveryStatus": "not-delivered",
+      "sessionTarget": "current"
     }
   ]
 }
